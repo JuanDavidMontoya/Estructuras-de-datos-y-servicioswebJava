@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Punto uno examen final</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <fieldset>
+            <legend>Ingrese cuatro numeros</legend>
+            <label for=""> Numero 1:</label>
+            <input type="text" id="txtN1" value="10"> <br><br>
+            <label for=""> Numero 2:</label>
+            <input type="text" id="txtN2" value="40"> <br><br>
+            <label for=""> Numero 3:</label>
+            <input type="text" id="txtN3" value="20"> <br><br>
+            <label for=""> Numero 4:</label>
+            <input type="text" id="txtN4" value="30"> <br><br>
+            <input type="button" onclick="Calcular();" value="Calcular">
+            <button type="button" class="button" onclick="location = 'index.jsp'">Regresar</button> <br> 
+        </fieldset>
+        <script>
+            function Calcular() {
+                let sum = 0
+                let numbers = [
+                    document.getElementById('txtN1').value,
+                    document.getElementById('txtN2').value,
+                    document.getElementById('txtN3').value,
+                    document.getElementById('txtN4').value,
+                ].sort(function(a, b){return b-a});
+                
+                for (let index = 1; index < numbers.length; index++) {
+                    sum += parseInt(numbers[index]);                    
+                }
+
+                alert(sum/3);
+            }
+        </script>
+    </body>
+</html>
